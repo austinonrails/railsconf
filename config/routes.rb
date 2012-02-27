@@ -1,4 +1,4 @@
-Hospitality::Application.routes.draw do
+Railsconf::Application.routes.draw do
   resources :favorites do
     collection do
       get 'thanks'
