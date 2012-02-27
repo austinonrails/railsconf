@@ -1,0 +1,60 @@
+<div class="activity">
+	<h1>Austin Hospitality</h1>
+	<p>
+		We're very excited to welcome <%= link_to 'RailsConf 2012', 'http://railsconf2012.com/' %><br />
+		to Austin, Texas April 23 - 25.
+	</p>
+	<p>
+		Below are a few things <%= link_to 'Austin on Rails', 'http://austinonrails.org/' %> is doing<br />
+		to help make your visit more enjoyable.
+	</p>
+
+	<p class="normal">If you have any questions or more ideas get in touch with <%= mail_to 'Chap Ambrose', 'chapambrose@gmail.com' %>.</p>
+</div>
+
+<div class="activity">
+	<h2>Talk to a Local</h2>
+
+	<div style="margin-bottom:30px">
+		<script src="http://railsconf.pockethotline.com/widget.js" type="text/javascript"></script>
+		<div id="pockethotline"></div>
+	</div>
+
+	<p class="normal"><%= link_to 'Answer some calls', 'http://railsconf.pockethotline.com/volunteer', :class => 'btn btn-success' %> if you're a local.</p>
+</div>
+
+<div class="activity">
+	<h2>Stay with a Local</h2>
+	<p>
+		<%= pluralize(Host.all.length, 'local') %> have agreed to host <%= pluralize(Host.all.collect(&:number_of_guests).sum, 'attendee') %> in their homes.
+	</p>
+
+	<p><%= link_to 'Apply to Stay with a Local', new_guest_path, :class => 'btn btn-large btn-primary' %></p>
+
+	<p class="normal">
+		<%= link_to 'Host some visitors', new_host_path, :class => 'btn btn-success' %> if you're a local.
+	</p>
+</div>
+
+<div class="activity">
+	<h2>Local Favorites</h2>
+	<p>
+		A hand-picked list of the best that Austin offers.
+	</p>
+
+	<ul id="favorites">
+		<% @favorites.each do |favorite| %>
+			<li>
+				<h3><%= link_to_unless favorite.website.blank?, favorite.name, favorite.website %></h3>
+				<p class="normal">
+					<%= favorite.description %><br />
+					<%= link_to favorite.address %>
+				</p>
+			</li>
+		<% end %>
+	</ul>
+
+	<p class="normal">
+		<%= link_to 'Suggest some favorites', new_favorite_path, :class => 'btn btn-success' %> if you're a local.
+	</p>
+</div>

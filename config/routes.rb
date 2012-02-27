@@ -1,4 +1,24 @@
-Railsconf::Application.routes.draw do
+Hospitality::Application.routes.draw do
+  resources :favorites do
+    collection do
+      get 'thanks'
+    end
+  end
+
+  resources :guests do
+    collection do
+      get 'thanks'
+    end
+  end
+
+  resources :hosts do
+    collection do
+      get 'thanks'
+    end
+  end
+
+  root :to => "home#index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

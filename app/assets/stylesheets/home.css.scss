@@ -1,0 +1,49 @@
+body#home_index {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 9px;
+    font-size: 81px;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  h2 {
+    margin-bottom: 9px;
+    font-size: 55px;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  p {
+    margin-bottom: 18px;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+    &.normal {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: normal;
+    }
+  }
+
+  ul#favorites {
+    width: 400px;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  .btn-large {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 14px 24px;
+    margin-right: 10px;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+
+  .activity {
+    padding: 50px 0;
+  }
+}
