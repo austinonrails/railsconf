@@ -1,4 +1,15 @@
 Railsconf::Application.routes.draw do
+  root :to => "pages#index"
+  get "/bohconf", :to => "pages#bohconf"
+  get "/ignite", :to => "pages#ignite"
+  get "/talk", :to => "pages#talk"
+  get "/stay", :to => "pages#stay"
+  get "/5k", :to => "pages#fivek", :as => 'fivek'
+  get "/happy", :to => "pages#happy"
+  get "/kids", :to => "pages#kids"
+  get "/sponsor", :to => "pages#sponsor"
+  get "/usergroups", :to => "pages#usergroups"
+
   resources :favorites do
     collection do
       get 'thanks'
@@ -16,8 +27,6 @@ Railsconf::Application.routes.draw do
       get 'thanks'
     end
   end
-
-  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
