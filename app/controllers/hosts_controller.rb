@@ -1,5 +1,5 @@
 class HostsController < ApplicationController
-  skip_before_filter :authenticate, :only => [:new, :create, :thanks]
+  before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
   # GET /hosts
   # GET /hosts.json
   def index

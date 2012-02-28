@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def talk
+    @favorites = Favorite.approved
   end
 
   def stay

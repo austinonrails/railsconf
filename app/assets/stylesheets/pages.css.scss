@@ -43,10 +43,6 @@ body#pages_index {
             border-radius: 6px;
   }
 
-  .activity {
-    padding: 50px 0;
-  }
-
   ul li a {
   	float: left;
   	padding: 40px;
@@ -56,4 +52,7 @@ body#pages_index {
   	display: block;
   	margin: 10px;
   }
+}
+.activity {
+  padding: 50px 0;
 }

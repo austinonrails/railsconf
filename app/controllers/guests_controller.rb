@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  skip_before_filter :authenticate, :only => [:new, :create, :thanks]
+  before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
   # GET /guests
   # GET /guests.json
   def index

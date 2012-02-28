@@ -1,2 +1,12 @@
-<h1>Pages#stay</h1>
-<p>Find me in app/views/pages/stay.html.erb</p>
+<div class="activity">
+	<h2>Stay with a Local</h2>
+	<p>
+		<%= pluralize(Host.all.length, 'local') %> have agreed to host <%= pluralize(Host.all.collect(&:number_of_guests).sum, 'attendee') %> in their homes.
+	</p>
+
+	<p><%= link_to 'Apply to Stay with a Local', new_guest_path, :class => 'btn btn-large btn-primary' %></p>
+
+	<p class="normal">
+		<%= link_to 'Host some visitors', new_host_path, :class => 'btn btn-success' %> if you're a local.
+	</p>
+</div>
