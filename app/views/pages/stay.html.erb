@@ -1,12 +1,10 @@
-<div class="activity">
-	<h2>Stay with a Local</h2>
-	<p>
-		<%= pluralize(Host.all.length, 'local') %> have agreed to host <%= pluralize(Host.all.collect(&:number_of_guests).sum, 'attendee') %> in their homes.
-	</p>
+<h1>Stay with a Local</h1>
+<h2>
+	<%= pluralize(Host.all.length, 'local') %> have agreed to host <%= pluralize(Host.all.collect(&:number_of_guests).sum, 'attendee') %> in their homes.
+</h2>
 
-	<p><%= link_to 'Apply to Stay with a Local', new_guest_path, :class => 'btn btn-large btn-primary' %></p>
+<p><%= link_to 'Apply to Stay with a Local', new_guest_path, :class => 'btn btn-large btn-primary' %></p>
 
-	<p class="normal">
-		<%= link_to 'Host some visitors', new_host_path, :class => 'btn btn-success' %> if you're a local.
-	</p>
-</div>
+<p>
+	<%= link_to 'Host some visitors', new_host_path, :class => 'btn btn-success' %> if you're a local.
+</p>
