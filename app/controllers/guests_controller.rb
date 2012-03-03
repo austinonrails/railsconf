@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
+  before_filter :authenticate, :only => [:index, :edit, :update, :destroy, :show]
   # GET /guests
   # GET /guests.json
   def index
