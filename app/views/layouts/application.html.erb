@@ -1,16 +1,50 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>   <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-  <title>RailsConf Community Events: Presented by Austin on Rails</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+
+  <!-- TITLE -->
+  <title>Austin on Rails Presents RailsConf 2012 Community Events</title>
+
+  <!-- METAs -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Austin on Rails has put together various events and services to make your RailsConf 2012 experience that much more enjoyable!">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0;">
   <%= csrf_meta_tags %>
+
+  <!-- LINKED files -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link rel="author" href="/humans.txt" />
+
+  <!-- SCRIPTS -->
+  <%= javascript_include_tag "application" %>
+
 </head>
+
+
 <body id="<%= controller.controller_name.parameterize %>_<%= controller.action_name.parameterize %>">
+<div id="page">
+  <div id="container">  
 
-<div class="container">
-	<%= yield %>
-</div>
+    <header>
+      <div class="page-presenter"><a class="ir" href="http://austinonrails.org/">Austin on Rails presents</a></div>
+      <h1 class="page-purpose"><a href="/"><%= image_tag "full/masthead.png" %></a></h1>
+    </header>
 
+    <div id="main" role="main">
+        <%= yield %>
+    </div> <!-- /#main -->
+
+  </div> <!-- /#container -->
+
+  <footer>
+    <p>Austin on Rails is led by <a href="http://damonc.com">Damon Clinkscales</a></p>
+  </footer>
+
+</div> <!-- /#page -->
 </body>
 </html>

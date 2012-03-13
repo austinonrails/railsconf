@@ -1,0 +1,32 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+
+/* TEAM */
+  Development: Chap Ambrose
+  Site: http://chapambrose.com/
+  Twitter: @chapambrose
+  Location: Austin, TX
+
+  Development: Jeff Linwood
+  Site: http://jefflinwood.com/
+  Twitter: @jefflinwood
+  Location: Austin, TX
+
+  Design/Markup: Joshua Butner
+  Site: http://joshbutner.com/
+  Twitter: @joshbutner
+  Location: Austin, TX
+
+  Bossman/"The Brains": Damon Clinkscales
+  Site: http://damonc.com/
+  Twitter: @damon
+  Location: Austin, TX
+
+/* THANKS */
+  Names (& URL):
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery
+  Software: Sublime Text 2, Photoshop CS 5, Ruby on Rails 3-ish, HEROKU!

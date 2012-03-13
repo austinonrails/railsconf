@@ -1,25 +1,76 @@
-<div class="activity">
-	<h1>RailsConf 2012<br />Community Events</h1>
-	<p>
-		We're very excited to welcome <%= link_to 'RailsConf 2012', 'http://railsconf2012.com/' %><br />
-		to Austin, Texas April 23 - 25.
-	</p>
-	<p>
-		Below are a few things <%= link_to 'Austin on Rails', 'http://austinonrails.org/' %> is doing<br />
-		to help make your visit more enjoyable.
-	</p>
 
-	<p class="normal">If you have any questions or more ideas get in touch with <%= mail_to 'railsconf@austinonrails.org' %>.</p>
-</div>
+      <div class="introduction">
+        <h2>We're very excited to welcome <b>RailsConf 2012</b> to Austin, Texas, April 23 through 25.<br />
+          Austin on Rails has planned several events and services to make your visit more enjoyable.</h2>
+      </div>
 
-<ul class="unstyled">
-	<li><%= link_to 'BohConf', bohconf_path %></li>
-	<li><%= link_to 'Ignite RailsConf', ignite_path %></li>
-	<li><%= link_to 'Stay with a Local', stay_path %></li>
-	<li><%= link_to 'Talk with a Local', talk_path %></li>
-	<li><%= link_to 'RailsConf 5k', fivek_path %></li>
-	<li><%= link_to 'Austin on Rails Happy Hour', happy_path %></li>
-	<li><%= link_to 'Kids Code Camp', kids_path %></li>
-	<li><%= link_to 'Visiting Usergroups', usergroups_path %></li>
-	<li><%= link_to 'Sponsor an Event', sponsor_path %></li>
-</ul>
+      <div class="sponsors">
+        <h1 class="heading">Brought to you by these generous sponsors:</h1>
+        <ul>
+          <li><a href="http://otherinbox.com/"><%= image_tag "sponsor-otherinbox.png" %></a></li>
+          <li><a href="http://massrelevance.com/"><%= image_tag "sponsor-massrelevance.png" %></a></li>
+          <li><a href="http://heroku.com/"><%= image_tag "sponsor-heroku.png" %></a></li>
+          <li><a href="http://att.com/"><%= image_tag "sponsor-att.png" %></a></li>
+        </ul>
+        <p>If you'd like to sponsor our community events, please email <a href="mailto:sponsors@austinonrails.org">sponsors@austinonrails.org</a>.</p>
+      </div> <!-- /.sponsors -->
+
+      <div class="events">
+        <h1 class="heading">Events and Services:</h1>
+        <ul class="eventlist">
+          <li class="event">
+            <h1>BohConf</h1>
+            <p>At BohConf, we're going to get our hands dirty writing code and sharing ideas in an open and free-form environment. <b>Everyone is welcome</b> at BohConf.</p>
+            <a class="ir" href="/bohconf">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>Ignite RailsConf</h1>
+            <p><b>Five minutes, 20 slides. What would you say?</b> 16 artists, technologists, thinkers and personalities will take the stage to answer this challenge.</p>
+            <a class="ir" href="/ignite">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>RailsConf 5k</h1>
+            <p><b>Stretch your legs</b> and join the locals on Austin’s Lady Bird Lake Trail!</p>
+            <a class="ir" href="/5k">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>Stay With A Local</h1>
+            <p>If you’re coming to town, you might want to <b>Stay With A Local</b>.</p>
+            <a class="ir" href="/stay">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>Talk With A Local</h1>
+            <p><b>Talk With A Local</b> if you have any questions about the town or the events. Even if you just want to know good places to eat or get coffee.</p>
+            <a class="ir" href="/talk">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>Kids Code Camp</h1>
+            <p>We’re helping to teach <b>kids to code!</b> Sessions on Ruby, iOS development and general web development, among others!</p>
+            <a class="ir" href="/kids">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>A.o.R. Happy Hour</h1>
+            <p>You may want to let loose and socialize outside of the hectic conference schedule. Come to the <b>Austin on Rails Happy Hour!</b></p>
+            <a class="ir" href="/happy">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>Visiting Usergroups</h1>
+            <p>Lots of people will be in town- find out more about <b>visiting usergroups</b>.</p>
+            <a class="ir" href="/usergroups">Learn More &raquo;</a>
+          </li>
+
+          <li class="event">
+            <h1>Sponsor An Event</h1>
+            <p>See an event you’d like to be involved with? <b>Sponsor an event</b> and help your event be a success!</p>
+            <a class="ir" href="/sponsors">Learn More &raquo;</a>
+          </li>
+        </ul> <!-- /.eventlist -->
+      </div> <!-- /.events -->
+
