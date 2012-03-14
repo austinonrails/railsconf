@@ -1,27 +1,29 @@
-<h1>Listing guests</h1>
+<div class="details">
+  <h1>Listing guests</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @guests.each do |guest| %>
-  <tr>
-    <td><%= guest.name %></td>
-    <td><%= guest.email %></td>
-    <td><%= guest.phone %></td>
-    <td><%= link_to 'Show', guest %></td>
-    <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
-    <td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @guests.each do |guest| %>
+    <tr>
+      <td><%= guest.name %></td>
+      <td><%= guest.email %></td>
+      <td><%= guest.phone %></td>
+      <td><%= link_to 'Show', guest %></td>
+      <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
+      <td><%= link_to 'Destroy', guest, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Guest', new_guest_path %>
+  <%= link_to 'New Guest', new_guest_path %>
+</div>

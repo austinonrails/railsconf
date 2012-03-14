@@ -1,20 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="details">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @guest.name %>
-</p>
+    <p>
+      <b>Name:</b>
+      <%= @guest.name %>
+    </p>
 
-<p>
-  <b>Email:</b>
-  <%= @guest.email %>
-</p>
+    <p>
+      <b>Email:</b>
+      <%= @guest.email %>
+    </p>
 
-<p>
-  <b>Phone:</b>
-  <%= @guest.phone %>
-</p>
+    <p>
+      <b>Phone:</b>
+      <%= @guest.phone %>
+    </p>
 
 
-<%= link_to 'Edit', edit_guest_path(@guest) %> |
-<%= link_to 'Back', guests_path %>
+    <%= link_to 'Edit', edit_guest_path(@guest) %> |
+    <%= link_to 'Back', guests_path %>
+</div>
