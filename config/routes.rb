@@ -8,6 +8,7 @@ Railsconf::Application.routes.draw do
   get "/happy", :to => "pages#happy"
   get "/kids", :to => "pages#kids"
   get "/sponsor", :to => "pages#sponsor"
+  get "/sponsors", :to => "pages#sponsor"
   get "/usergroups", :to => "pages#usergroups"
 
   resources :favorites do
