@@ -1,29 +1,31 @@
-<h1>Listing favorites</h1>
+<div class="details">
+  <h1>Listing favorites</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Website</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Website</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @favorites.each do |favorite| %>
-  <tr>
-    <td><%= favorite.name %></td>
-    <td><%= favorite.address %></td>
-    <td><%= favorite.website %></td>
-    <td><%= favorite.description %></td>
-    <td><%= link_to 'Show', favorite %></td>
-    <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
-    <td><%= link_to 'Destroy', favorite, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @favorites.each do |favorite| %>
+    <tr>
+      <td><%= favorite.name %></td>
+      <td><%= favorite.address %></td>
+      <td><%= favorite.website %></td>
+      <td><%= favorite.description %></td>
+      <td><%= link_to 'Show', favorite %></td>
+      <td><%= link_to 'Edit', edit_favorite_path(favorite) %></td>
+      <td><%= link_to 'Destroy', favorite, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Favorite', new_favorite_path %>
+  <%= link_to 'New Favorite', new_favorite_path %>
+</div>
