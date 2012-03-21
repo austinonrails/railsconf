@@ -29,6 +29,12 @@ Railsconf::Application.routes.draw do
     end
   end
 
+  resources :speakers do
+    collection do
+      get 'thanks'
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

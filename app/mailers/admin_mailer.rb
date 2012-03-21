@@ -9,7 +9,13 @@ class AdminMailer < ActionMailer::Base
   def submission(thing)
     @thing = thing
 
-    mail to: "chapambrose@gmail.com",
+    if @thing.kind_of?(Speaker)
+      to = "railsconf@austinonrails.org"
+    else
+      to = "chapambrose@gmail.com"
+    end
+
+    mail to: to,
          subject: "Somebody Submitted a #{thing.class.to_s}"
   end
 end
