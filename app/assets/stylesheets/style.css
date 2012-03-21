@@ -214,6 +214,10 @@ td { vertical-align: top; }
 /* =============================================================================
    Globals
    ========================================================================== */
+html,
+body {
+  height: 100%;
+}
 body {
   background : #000;
   color : #e4e4e4;
@@ -223,10 +227,13 @@ body {
 }
 #page {
   background : transparent url(/assets/mobile/bkg-body.jpg) 50% 0 no-repeat;
+  min-height : 100%;
   overflow : hidden;
   width : 100%;
 }
 #container {
+  overflow:auto;
+  padding-bottom: 30px;
   width : 100%;
 }
 /* =============================================================================
@@ -372,12 +379,15 @@ div#main {
    Footer
    ========================================================================== */
 footer {
-  background : transparent url(/assets/bkg-footer.png) 0 0 repeat-x;
-  height : 24px;
-  margin : 30px 0 0;
-  padding : 7px 0 13px;
-  text-align : center;
-  width : 100%;
+  background : #1c1c1c url(/assets/bkg-footer.png) 0 0 repeat-x;
+  clear : both;
+  display : block;
+  height : 50px;
+  margin : 0;
+  margin-top : -70px; /* negative value of footer height */
+  padding : 7px 10px 13px;
+  position : relative;
+  text-align : justify;
 }
   footer a {
     color : #ad0220 !important;
@@ -391,8 +401,29 @@ footer {
    ========================================================================== */
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-/* Styles */
+@media only screen and (min-width : 543px) and (max-width : 1024px) {
+  html,
+  body { 
+    height : 100%;
+  }
+  #page {
+    min-height : 100%;
+  }
+  #container {
+    overflow : auto;
+    padding-bottom : 24px;
+  }
+  footer {
+    clear : both;
+    display : block;
+    height : 24px;
+    line-height : 12px;
+    margin : 0;
+    margin-top : -44px; /* negative value of footer height */
+    padding : 7px 10px 13px;
+    position : relative;
+    text-align : center;
+  }
 }
 
 /* Desktops and laptops ----------- */
@@ -401,13 +432,20 @@ footer {
   /* =============================================================================
      Globals
      ========================================================================== */
+  html,
+  body { 
+    height : 100%;
+  }
   body {
     background : #161616 url(/assets/full/bkg-body.jpg) 0 0 repeat;
   }
   #page {
     background : transparent url(/assets/full/bkg-header.png) 50% 0 no-repeat;
+    min-height : 100%;
   }
   #container {
+    overflow : auto;
+    padding-bottom : 24px;
   }
   /* =============================================================================
      Header
@@ -442,7 +480,7 @@ footer {
      Content
      ========================================================================== */
   div#main {
-    min-height : 512px;
+
   }
     .introduction {
       line-height : 30px;
@@ -543,12 +581,16 @@ footer {
      Footer
      ========================================================================== */
   footer {
-    background : transparent url(/assets/bkg-footer.png) 0 0 repeat-x;
+    background : #1c1c1c url(/assets/bkg-footer.png) 0 0 repeat-x;
+    clear : both;
+    display : block;
     height : 24px;
-    margin : 30px 0 0;
-    padding : 7px 0 13px;
+    line-height : 12px;
+    margin : 0;
+    margin-top : -44px; /* negative value of footer height */
+    padding : 7px 10px 13px;
+    position : relative;
     text-align : center;
-    width : 100%;
   }
     footer a {
       color : #ad0220 !important;
