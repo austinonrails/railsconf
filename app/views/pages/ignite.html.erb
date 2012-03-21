@@ -5,4 +5,19 @@
     <p><%= link_to 'http://plancast.com/p/a12y/ignite-railsconf-3', 'http://plancast.com/p/a12y/ignite-railsconf-3' %></p>
 
     <p><%= link_to 'Submit your idea for a talk', new_speaker_path, :class => 'btn btn-large btn-primary' %></p>
+
+  <h3>Proposed Talks</h3>
+	<ul>
+		<% Speaker.where(:hide => false).each do |speaker| %>
+			<li>
+				<h4>
+					<%= link_to_if speaker.twitter.present?, speaker.name, "http://twitter.com/#{speaker.twitter}" %>:
+					<%= speaker.title %>
+				</h4>
+				<p class="normal">
+					<%= speaker.abstract %>
+				</p>
+			</li>
+		<% end %>
+	</ul>
 </div>

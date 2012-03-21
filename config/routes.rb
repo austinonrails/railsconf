@@ -1,4 +1,5 @@
 Railsconf::Application.routes.draw do
+
   root :to => "pages#index"
   get "/bohconf", :to => "pages#bohconf"
   get "/ignite", :to => "pages#ignite"
