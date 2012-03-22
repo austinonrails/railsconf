@@ -68,10 +68,10 @@
       <div class="control-group">
         <%= f.label :suggested_time, 'Are there certain days or times that would be better?' %>
         <div class="controls">
-          <%= f.text_area :host_bio, :rows => 5 %>
+          <%= f.text_area :suggested_time, :rows => 5 %>
         </div>
       </div>
-      <% unless @bohconf_session.new_record? %>
+      <% if !@bohconf_session.new_record? && @admin %>
         <div class="control-group">
           <%= f.label :hide %>
           <div class="controls">
@@ -92,6 +92,7 @@
         </div>
       <% end %>
       <div class="form-actions">
+        <%= hidden_field_tag :token, params[:token] %>
         <%= f.submit 'Submit', :class => 'btn btn-primary' %>
       </div>
     </div>

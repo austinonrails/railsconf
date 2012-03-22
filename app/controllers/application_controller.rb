@@ -5,9 +5,19 @@ class ApplicationController < ActionController::Base
 	def authenticate
 	  authenticate_or_request_with_http_basic do |username, password|
 	  	if Rails.env.production?
-	  		username == ENV['HTTP_USER'] && password == ENV['HTTP_PASSWORD']
+	  		if username == ENV['HTTP_USER'] && password == ENV['HTTP_PASSWORD']
+	  			@admin = true
+	  			true
+	  		else
+	  			false
+	  		end
 	  	else
-	    	username == "foo" && password == "bar"
+	    	if username == "foo" && password == "bar"
+	    		@admin = true
+	  			true
+	  		else
+	  			false
+	  		end
 	  	end
 	  end
 	end

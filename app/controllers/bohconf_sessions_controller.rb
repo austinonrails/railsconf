@@ -1,5 +1,6 @@
 class BohconfSessionsController < ApplicationController
-  before_filter :authenticate, :only => [:index, :edit, :update, :destroy, :show]
+  before_filter :authenticate, :only => [:index, :destroy, :show]
+  before_filter :authorized_to_edit_bohconf_session, :only => [:edit, :update]
   # GET /bohconf_sessions
   # GET /bohconf_sessions.json
   def index
@@ -35,17 +36,18 @@ class BohconfSessionsController < ApplicationController
 
   # GET /bohconf_sessions/1/edit
   def edit
-    @bohconf_session = BohconfSession.find(params[:id])
   end
 
   # POST /bohconf_sessions
   # POST /bohconf_sessions.json
   def create
     @bohconf_session = BohconfSession.new(params[:bohconf_session])
-
+    @bohconf_session.hide = true
+    @bohconf_session.token = SecureRandom.hex(10)
     respond_to do |format|
       if @bohconf_session.save
         AdminMailer.submission(@bohconf_session).deliver
+        UserMailer.bohconf_session_submitted(@bohconf_session).deliver
         format.html { redirect_to thanks_bohconf_sessions_url }
         format.json { render json: @bohconf_session, status: :created, location: @bohconf_session }
       else
@@ -59,10 +61,9 @@ class BohconfSessionsController < ApplicationController
   # PUT /bohconf_sessions/1.json
   def update
     @bohconf_session = BohconfSession.find(params[:id])
-
     respond_to do |format|
-      if @bohconf_session.update_attributes(params[:bohconf_session])
-        format.html { redirect_to @bohconf_session, notice: 'Bohconf session was successfully updated.' }
+      if @bohconf_session.update_attributes(session_params)
+        format.html { redirect_to bohconf_path, notice: 'Bohconf session was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -80,6 +81,23 @@ class BohconfSessionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to bohconf_sessions_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+  def authorized_to_edit_bohconf_session
+    @bohconf_session = BohconfSession.find(params[:id])
+    unless @bohconf_session.token == params[:token] || authenticate
+      redirect_to(bohconf_sessions_path, notice: "Looks like you're not authorized.") && return
+    end
+  end
+  def session_params
+    if @admin
+      params[:bohconf_session]
+    else
+      p = params[:bohconf_session]
+      p.delete(:hide)
+      p
     end
   end
 end
