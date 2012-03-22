@@ -46,6 +46,7 @@ class SpeakersController < ApplicationController
     respond_to do |format|
       if @speaker.save
         AdminMailer.submission(@speaker).deliver
+        UserMailer.ignite_talk_submitted(@speaker).deliver
         format.html { redirect_to thanks_speakers_url }
         format.json { render json: @speaker, status: :created, location: @speaker }
       else

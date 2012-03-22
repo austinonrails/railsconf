@@ -12,4 +12,10 @@ class UserMailer < ActionMailer::Base
     mail to: session.host_email,
          subject: "Your BohConf Session Submission"
   end
+
+  def ignite_talk_submitted(talk)
+
+    mail to: talk.email,
+         subject: "Your Ignite RailsConf Submission"
+  end
 end
