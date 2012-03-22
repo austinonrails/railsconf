@@ -42,7 +42,7 @@ class SpeakersController < ApplicationController
   # POST /speakers.json
   def create
     @speaker = Speaker.new(params[:speaker])
-
+    @speaker.hide = true
     respond_to do |format|
       if @speaker.save
         AdminMailer.submission(@speaker).deliver

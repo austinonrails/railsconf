@@ -52,6 +52,14 @@
           <%= f.text_area :bio, :rows => 5 %>
         </div>
       </div>
+      <% unless @speaker.new_record? %>
+        <div class="control-group">
+          <%= f.label :hide %>
+          <div class="controls">
+            <%= f.check_box :hide %>
+          </div>
+        </div>
+      <% end %>
       <div class="form-actions">
         <%= f.submit 'Submit', :class => 'btn btn-primary' %>
       </div>

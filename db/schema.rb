@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120321195618) do
+ActiveRecord::Schema.define(:version => 20120322113010) do
+
+  create_table "bohconf_sessions", :force => true do |t|
+    t.string   "title"
+    t.text     "abstract"
+    t.string   "host_name"
+    t.string   "host_email"
+    t.string   "host_twitter"
+    t.text     "host_bio"
+    t.string   "session_type",   :default => "hack session"
+    t.text     "suggested_time"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.boolean  "hide",           :default => false,          :null => false
+    t.string   "token"
+  end
 
   create_table "favorites", :force => true do |t|
     t.string   "name"
@@ -58,8 +75,9 @@ ActiveRecord::Schema.define(:version => 20120321195618) do
     t.text     "bio"
     t.string   "twitter"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "hide",       :default => false, :null => false
   end
 
 end

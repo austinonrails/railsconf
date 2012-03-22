@@ -1,4 +1,5 @@
 Railsconf::Application.routes.draw do
+
   root :to => "pages#index"
   get "/bohconf", :to => "pages#bohconf"
   get "/ignite", :to => "pages#ignite"
@@ -30,6 +31,12 @@ Railsconf::Application.routes.draw do
   end
 
   resources :speakers do
+    collection do
+      get 'thanks'
+    end
+  end
+
+  resources :bohconf_sessions do
     collection do
       get 'thanks'
     end

@@ -9,4 +9,23 @@
 
     <p>Follow <%= link_to '@bohconf', 'http://twitter.com/bohconf' %> to keep up with the latest news.</p>
 
+    <p><%= link_to 'Submit your idea for a BohConf Session', new_bohconf_session_path, :class => 'btn btn-large btn-primary' %></p>
+
+  <h3>Proposed Sessions</h3>
+	<ul>
+		<% BohconfSession.where(:hide => false).each do |session| %>
+			<li>
+				<h4>
+					<%= link_to_if session.host_twitter.present?, session.host_name, "http://twitter.com/#{session.host_twitter}" %>:
+					<%= session.title %>
+				</h4>
+				<p class="normal">
+					<%= session.session_type %>
+				</p>
+				<p class="normal">
+					<%= session.abstract %>
+				</p>
+			</li>
+		<% end %>
+	</ul>
 </div>

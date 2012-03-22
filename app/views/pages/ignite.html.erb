@@ -9,5 +9,20 @@
 
     <p>Follow <%= link_to '@igniterailsconf', 'http://twitter.com/igniterailsconf' %> to keep up with the latest news on Ignite RailsConf.</p>
 
-    <p><%= link_to 'Submit your idea for a talk!', new_speaker_path, :class => 'btn btn-large btn-primary' %></p>
+  <p><%= link_to 'Submit your idea for a talk', new_speaker_path, :class => 'btn btn-large btn-primary' %></p>
+
+  <h3>Proposed Talks</h3>
+	<ul>
+		<% Speaker.where(:hide => false).each do |speaker| %>
+			<li>
+				<h4>
+					<%= link_to_if speaker.twitter.present?, speaker.name, "http://twitter.com/#{speaker.twitter}" %>:
+					<%= speaker.title %>
+				</h4>
+				<p class="normal">
+					<%= speaker.abstract %>
+				</p>
+			</li>
+		<% end %>
+	</ul>
 </div>

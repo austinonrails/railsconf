@@ -1,0 +1,100 @@
+<%= form_for(@bohconf_session) do |f| %>
+  <% if @bohconf_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bohconf_session.errors.count, "error") %> prohibited this bohconf_session from being saved:</h2>
+
+      <ul>
+      <% @bohconf_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="span6">
+      <div class="control-group">
+        <%= f.label :session_type %>
+        <div class="controls">
+          <label class="radio">
+            <%= f.radio_button :session_type, 'hack session' %>
+            This is a hack session
+          </label><br />
+          <label class="radio">
+            <%= f.radio_button :session_type, 'talk' %>
+            This is a talk
+          </label>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :title %>
+        <div class="controls">
+          <%= f.text_field :title %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :abstract %>
+        <div class="controls">
+          <%= f.text_area :abstract %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :host_name %>
+        <div class="controls">
+          <%= f.text_field :host_name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :host_email %>
+        <div class="controls">
+          <%= f.text_field :host_email %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :host_twitter %>
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on">@</span>
+            <%= f.text_field :host_twitter, :class => 'span2' %>
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :host_bio %>
+        <div class="controls">
+          <%= f.text_area :host_bio, :rows => 5 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :suggested_time, 'Are there certain days or times that would be better?' %>
+        <div class="controls">
+          <%= f.text_area :suggested_time, :rows => 5 %>
+        </div>
+      </div>
+      <% if !@bohconf_session.new_record? && @admin %>
+        <div class="control-group">
+          <%= f.label :hide %>
+          <div class="controls">
+            <%= f.check_box :hide %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :starts_at %>
+          <div class="controls">
+            <%= f.datetime_select :starts_at %>
+          </div>
+        </div>
+        <div class="control-group">
+          <%= f.label :ends_at %>
+          <div class="controls">
+            <%= f.datetime_select :ends_at %>
+          </div>
+        </div>
+      <% end %>
+      <div class="form-actions">
+        <%= hidden_field_tag :token, params[:token] %>
+        <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
