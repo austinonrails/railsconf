@@ -87,7 +87,7 @@ class BohconfSessionsController < ApplicationController
   private
   def authorized_to_edit_bohconf_session
     @bohconf_session = BohconfSession.find(params[:id])
-    unless @bohconf_session.token == params[:token] || authenticate
+    unless (params[:token].present? && @bohconf_session.token == params[:token]) || authenticate
       redirect_to(bohconf_sessions_path, notice: "Looks like you're not authorized.") && return
     end
   end
