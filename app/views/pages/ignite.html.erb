@@ -16,6 +16,9 @@
 		<% Speaker.where(:hide => false).each do |speaker| %>
 			<li>
 				<h4>
+					<% if speaker.twitter.present? %>
+						<%= image_tag("http://api.twitter.com/1/users/profile_image/#{speaker.twitter}?size=normal") %>
+					<% end %>
 					<%= link_to_if speaker.twitter.present?, speaker.name, "http://twitter.com/#{speaker.twitter}" %>:
 					<%= speaker.title %>
 				</h4>
