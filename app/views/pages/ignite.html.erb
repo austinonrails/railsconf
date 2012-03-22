@@ -11,6 +11,8 @@
 
   <p><%= link_to 'Submit your idea for a talk', new_speaker_path, :class => 'btn btn-large btn-primary' %></p>
 
+  <% @ignite_speakers = Speaker.where(:hide => false) %>
+  <% if @ignite_speakers.any? %>
   <h3>Proposed Talks</h3>
 	<ul>
 		<% Speaker.where(:hide => false).each do |speaker| %>
@@ -28,4 +30,5 @@
 			</li>
 		<% end %>
 	</ul>
+  <% end %>
 </div>
