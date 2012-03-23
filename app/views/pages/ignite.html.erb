@@ -3,11 +3,15 @@
     <h2>April 22nd 6:00pm - 9:00pm</h2>
     <h2>Hilton Austin, Salon J</h2>
 
-    <b>Five minutes, 20 slides. What would you say?</b> Sixteen artists, technologists, thinkers, and personalities take the stage to answer this challenge.
+    <b>Five minutes, 20 slides. What would you say?</b> Sixteen artists, technologists, thinkers, and personalities take the stage to answer this challenge.  What is Ignite?  Fast-paced, fun, thought-provoking, social, local, global - Ignite is all of these and more. It's a high-energy evening of 5-minute talks by people who have an idea - and the guts to get onstage and share it with the rest of the Rails community. We're looking for a wide range of talks and are currently accepting speaking proposals - submit your speaking proposal now! Not all of the talks will be Rails-specific but all will be of interest to Rails developers.  You do not have to be a RailsConf attendee to attend or speak at the event.  Proposals are due by <b>5 pm CT on Friday, 4/13/2012</b>.</p>
+
+    <p><b><a href="http://ignite-railsconf2012.eventbrite.com/">Register for Ignite RailsConf</a> today!</b></p>
 
     <p>Follow <%= link_to '@igniterailsconf', 'http://twitter.com/igniterailsconf' %> to keep up with the latest news on Ignite RailsConf.</p>
 
   <p><%= link_to 'Submit your idea for a talk', new_speaker_path, :class => 'btn btn-large btn-primary' %></p>
+
+  <p><b>Proposals are due by 5 pm CT on Friday, 4/13/2012.</b></p>
 
   <% @ignite_speakers = Speaker.where(:hide => false) %>
   <% if @ignite_speakers.any? %>
