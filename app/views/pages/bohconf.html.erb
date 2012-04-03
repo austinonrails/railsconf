@@ -23,7 +23,7 @@
 				<li>
 					<h4>
 						<% if session.host_twitter.present? %>
-							<%= image_tag("http://api.twitter.com/1/users/profile_image/#{session.host_twitter}?size=normal") %>
+							<%= image_tag("http://api.twitter.com/1/users/profile_image/#{session.host_twitter}?size=normal", :size => "48x48") %>
 						<% end %>
 						<%= link_to_if session.host_twitter.present?, session.host_name, "http://twitter.com/#{session.host_twitter}" %>:
 						<%= session.title %>
