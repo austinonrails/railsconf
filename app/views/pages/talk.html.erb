@@ -1,32 +1,30 @@
 <div class="details">
 	<h1>Talk to a Local</h1>
-	<div style="margin-bottom:30px; width: 250px;">
+	<div style="margin : 30px 0; width: 100%;">
 		<script src="http://railsconf.pockethotline.com/widget.js" type="text/javascript"></script>
 		<div id="pockethotline"></div>
 	</div>
 
-	<p><%= link_to 'Answer some calls', 'http://railsconf.pockethotline.com/volunteer', :class => 'btn btn-success' %> if you're a local.</p>
+	<p><%= link_to 'Answer some calls if you\'re a local', 'http://railsconf.pockethotline.com/volunteer', :class => 'action' %></p>
 
 	<br><br>
 
-	<h3>Local Favorites</h3>
-	<p>
-		A hand-picked list of the best that Austin offers.
-	</p>
+	<section class="grouped">
+		<h1>Local Favorites</h1>
+		<p>A hand-picked list of the best that Austin offers.</p>
 
-	<ul id="favorites">
-		<% @favorites.each do |favorite| %>
-			<li>
-				<h3><%= link_to_unless favorite.website.blank?, favorite.name, favorite.website %></h3>
-				<p class="normal">
-					<%= favorite.description %><br />
-					<%= link_to favorite.address %>
-				</p>
-			</li>
-		<% end %>
-	</ul>
+		<ul>
+			<% @favorites.each do |favorite| %>
+				<li>
+					<h2><%= link_to_unless favorite.website.blank?, favorite.name, favorite.website %></h2>
+					<p class="normal">
+						<%= favorite.description %><br />
+						<%= link_to favorite.address %>
+					</p>
+				</li>
+			<% end %>
+		</ul>
 
-	<p class="normal">
-		<%= link_to 'Suggest some favorites', new_favorite_path, :class => 'btn btn-success' %> if you're a local.
-	</p>
+		<p><%= link_to 'Suggest some favorites if you\'re a local', new_favorite_path, :class => 'action' %></p>
+	</section>
 </div>
