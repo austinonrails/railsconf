@@ -296,7 +296,7 @@ div#main {
   #main hr {
     background : rgba(0,0,0,0.2);
     border : none;
-    color : none;
+    color : transparent;
     margin : 0;
     padding : 0;
   }
@@ -569,7 +569,7 @@ footer {
 /* ==|== media queries ======================================================
    ========================================================================== */
 
-@media only screen and (min-width : 480px) and (max-width : 800px) {
+@media only screen and (min-width : 480px) {
   .page-purpose {
     width : 75%;
   }
@@ -650,7 +650,7 @@ footer {
     font-family : TradeGothic, sans-serif;
     font-size : 30px;
     line-height : 38px;
-    padding: 0;
+    padding : 0;
     text-align : center;
   }
   .event p {
