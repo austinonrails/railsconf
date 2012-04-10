@@ -208,7 +208,7 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Joshua Butner, me@joshbutner.com
    ========================================================================== */
 
 /* =============================================================================
@@ -221,111 +221,170 @@ body {
 body {
   background : #000;
   color : #e4e4e4;
-  font : normal 12px/16px Gotham, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font : normal 12px/16px Gotham, "Helvetica Neue", Arial, Helvetica, sans-serif !important;
   margin : 0;
   padding : 0;
 }
 #page {
-  background : transparent url(/assets/mobile/bkg-body.jpg) 50% 0 no-repeat;
+  background : transparent url(/assets/mobile/bkg-body.jpg) 0 0 no-repeat;
   min-height : 100%;
   overflow : hidden;
   width : 100%;
 }
 #container {
-  overflow:auto;
-  padding-bottom: 70px;
+  overflow : auto;
+  padding-bottom : 44px;
   width : 100%;
 }
+.desktop {
+  display : none;
+  visibility : hidden;
+}
+
+/* =============================================================================
+   Presenter Bar
+   ========================================================================== */
+.page-presenter {
+  background : #000;
+  margin : 0;
+  padding : 0;
+  width : 100%
+}
+  .page-presenter a {
+    color : #fff;
+    cursor: pointer;
+    display : block;
+    font-size : 14px;
+    font-weight : bold;
+    padding : 4px 0;
+    text-align : center;
+    text-decoration : none;
+  }
+  .page-presenter a:hover,
+  .page-presenter a:focus {
+    color : #d4d4d4;
+  }
+  .page-presenter a b {
+    font-weight : 300;
+  }
+
 /* =============================================================================
    Header
    ========================================================================== */
 header {
   margin : 0 auto;
-  padding-top : 100px;
+  padding : 0;
+  padding-top : 14px;
   position : relative;
-  width : 90%;
+  text-align : center;
+  width : 100%;
 }
-  .page-presenter a {
-    background : transparent url(/assets/mobile/aor.png) 50% 0 no-repeat;
-    display : inline-block;
-    height : 44px;
-    left : 50%;
-    margin-left : -60px;
-    position : absolute;
-    top : 0;
-    width : 167px;
-  }
-  .page-presenter a:hover,
-  .page-presenter a:focus {
-    background : transparent url(/assets/mobile/aor-hover.png) 50% 0 no-repeat;
-  }
   .page-purpose {
-    margin : 0 auto;
+    margin : 0 10px 0 auto;
     padding : 0;
-    width : 90%;
+    width : 65%;
   }
 
 /* =============================================================================
-   Content
+   Content - HOMEPAGE
    ========================================================================== */
 div#main {
-  padding : 0;
+  margin : 10px auto 0;
+  padding : 0 5%;
+  width : 90%;
 }
-  .introduction,
-  .sponsors {
-    padding : 10px;
+  #main hr {
+    background : rgba(0,0,0,0.2);
+    border : none;
+    color : transparent;
+    margin : 0;
+    padding : 0;
   }
+
+  /* INTRODUCTION */
   .introduction {
-    line-height : 20px;
+    line-height : 18px;
+    margin : 10px 0;
+    padding : 0;
     text-align : center;
+    width : 100%;
   }
   .introduction h2 {
-    font-size : 16px;
+    font-size : 12px;
     font-weight : normal;
     margin : 0 auto;
     text-align : justify;
-    max-width : 600px;
+    max-width : 100%;
   }
   .introduction h2 br {
     line-height : 40px;
   }
   .introduction b {
-    color : #ad0220;
+    font-size : 18px;
     font-weight : normal;
+    text-align : justify;
   }
 
-  .sponsors,
-  .events {
+  /* SPONSORS */
+  .sponsors {
+    background : rgba(0,0,0,0.1);
+    border-top : 1px solid rgba(0,0,0,0.1);
+    margin : 0 auto;
+    margin-bottom : 30px;
+    padding : 5px;
     text-align : center;
   }
-  .sponsors .heading,
-  .events .heading {
+  .sponsors .heading {
     color : #fff;
     font-family : LobsterTwoItalic;
-    font-size : 24px;
+    font-size : 16px;
     font-weight : normal;
     letter-spacing : 1px;
-    line-height : 32px;
-    margin-top : 20px;
+    line-height : 22px;
+    margin : 0;
+    padding : 0;
     text-shadow : 0 1px 0 #af868d;
   }
   .sponsors ul {
     display : block;
     margin : 0;
-    padding : 10px 10px 0;
+    overflow : hidden;
+    padding : 0;
   }
   .sponsors li {
     list-style : none;
     display : inline-block;
-    margin : 0 10px;
+    float : left;
+    width : 46%;
+    margin : 0 2%;
+    padding : 0;
+  }
+  .sponsors li img {
+    max-width : 100%;
+  }
+  .sponsors p {
+    font-size : 12px;
+    margin : 0;
+    padding : 0;
   }
 
-
+  /* EVENTS */
   .events {
     list-style : none;
     margin : 0;
     padding : 0 0 20px;
+    text-align : center;
     width : 100%;
+  }
+  .events .heading {
+    color : #fff;
+    font-family : LobsterTwoItalic;
+    font-size : 16px;
+    font-weight : normal;
+    letter-spacing : 1px;
+    line-height : 32px;
+    margin-top : 20px;
+    text-shadow : 0 1px 0 #af868d;
   }
   .eventlist {
     display : block;
@@ -346,8 +405,8 @@ div#main {
   }
   .event h1 {
     color : #ad0220;
-    font-family : TradeGothic, sans-serif;
-    font-size : 24px;
+    font-family : TradeGothic, Gotham, "Helvetica Neue Condensed Bold", "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif;
+    font-size : 18px;
     line-height : 27px;
     margin : 0;
     padding: 0;
@@ -369,15 +428,120 @@ div#main {
     background : transparent url(/assets/mobile/btn-learn_more-click.png) 50% 0 no-repeat;
   }
 
-    .details {
-      max-width : 860px;
-      margin : 0 auto;
-      padding : 40px 20px 0;
-    }
+/* =============================================================================
+   Content - EVENTS PAGES
+   ========================================================================== */
+.details {
+  margin : 0 auto;
+  overflow : hidden;
+  padding : 10px 10px 0;
+}
+  .details > img {
+    float : left;
+    margin : 0 2% 2% 0;
+    width : 100px;
+  }
+  .details h1 {
+    font-size : 22px;
+    line-height : 28px;
+    margin : 0;
+    padding : 0;
+  }
+  .details h2 {
+    font-size : 16px;
+    line-height : 18px;
+    margin : 0;
+    padding : 0;
+  }
+  .details section {
+    clear : both;
+    margin-top : 10px;
+    margin-bottom : 30px;
+    text-align : justify;
+  }
+  .details section:last-of-type {
+    margin-bottom : 0;
+  }
+  .details section h1 {
+    text-decoration : underline;
+  }
+  .details .action {
+    background: #a90329; /* Old browsers */
+    background: -moz-linear-gradient(top,  hsla(346,96%,34%,1) 0%, hsla(346,97%,29%,1) 44%, hsla(346,100%,22%,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(346,96%,34%,1)), color-stop(44%,hsla(346,97%,29%,1)), color-stop(100%,hsla(346,100%,22%,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  hsla(346,96%,34%,1) 0%,hsla(346,97%,29%,1) 44%,hsla(346,100%,22%,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  hsla(346,96%,34%,1) 0%,hsla(346,97%,29%,1) 44%,hsla(346,100%,22%,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  hsla(346,96%,34%,1) 0%,hsla(346,97%,29%,1) 44%,hsla(346,100%,22%,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  hsla(346,96%,34%,1) 0%,hsla(346,97%,29%,1) 44%,hsla(346,100%,22%,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+    border-radius : 2px;
+    color : #fff;
+    display : inline-block;
+    line-height : 18px;
+    padding : 2px;
+    text-align : center;
+    text-decoration : none;
+    width : 100%;
+  }
+  .details section ul,
+  .details section ul li {
+    list-style : none;
+    margin : 0;
+    padding : 10px 0;
+  }
+  .details section ol,
+  .details section ol li {
+    list-style : decimal;
+    margin : 0;
+    padding : 0 0 0 16px;
+  }
+  .details section li > img {
+    float : left;
+    margin : 0 2% 0 0;
+    width : 48px;
+  }
+  .details section h2 {
+    font-size : 16px;
+    line-height : 24px;
+  }
+  .details section .session-type {
+    background: #ff670f; /* Old browsers */
+    background: -moz-linear-gradient(top,  hsla(22,100%,53%,1) 0%, hsla(22,100%,53%,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,hsla(22,100%,53%,1)), color-stop(100%,hsla(22,100%,53%,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  hsla(22,100%,53%,1) 0%,hsla(22,100%,53%,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  hsla(22,100%,53%,1) 0%,hsla(22,100%,53%,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  hsla(22,100%,53%,1) 0%,hsla(22,100%,53%,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  hsla(22,100%,53%,1) 0%,hsla(22,100%,53%,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff670f', endColorstr='#ff670f',GradientType=0 ); /* IE6-9 */
+    color : #fff;
+    display : inline-block;
+    float : right;
+    font-weight : bold;
+    margin : 0;
+    padding : 2px 3px;
+    text-shadow : 0 1px 1px #000;
+  }
+  .details section .session-description {
+
+  }
+
 
   .control-group {
     margin-bottom: 20px;
   }
+  table tr {
+    border : 1px solid rgba(0,0,0,0.5);
+  }
+  table tr:nth-child(even){
+    background : rgba(255,255,255,0.1);
+  }
+  
+  /* 5k map */
+  #mmf_blog_map {
+    width : 100%;
+  }
+
+
 /* =============================================================================
    Footer
    ========================================================================== */
@@ -385,60 +549,46 @@ footer {
   background : #1c1c1c url(/assets/bkg-footer.png) 0 0 repeat-x;
   clear : both;
   display : block;
-  height : 50px;
+  height : 24px;
   margin : 0;
-  margin-top : -70px; /* negative value of footer height */
-  padding : 7px 10px 13px;
+  margin-top : -24px;
+  padding : 10px 10px 0;
   position : relative;
-  text-align : justify;
+  text-align : center;
 }
-  footer a {
-    color : #ad0220 !important;
+  footer p {
+    color : #363636;
+    margin : 0;
+    padding : 0;
+  }
+  footer p a {
+    color : #ad0220;
   }
 
 
 /* ==|== media queries ======================================================
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
    ========================================================================== */
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-width : 616px) and (max-width : 1024px) {
-  html,
-  body { 
-    height : 100%;
-  }
-  #page {
-    min-height : 100%;
-  }
-  #container {
-    overflow : auto;
-    padding-bottom : 44px;
-  }
-  footer {
-    background : #1c1c1c url(/assets/bkg-footer.png) 0 0 repeat-x;
-    clear : both;
-    display : block;
-    height : 24px;
-    margin : 0;
-    margin-top : -44px; /* negative value of footer height */
-    padding : 1px 10px 19px;
-    position : relative;
-    text-align : center;
+@media only screen and (min-width : 480px) {
+  .page-purpose {
+    width : 75%;
   }
 }
 
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1025px) {
-
-  /* =============================================================================
-     Globals
-     ========================================================================== */
-  html,
-  body { 
-    height : 100%;
+@media only screen and (min-width : 560px) {
+  .page-purpose {
+    width : 85%;
   }
+  .introduction h2 {
+    font-size : 16px;
+    line-height : 24px;
+  }
+  .introduction h2 b {
+    font-size : 24px;
+  }
+}
+
+@media only screen and (min-width : 640px) {
   body {
     background : #161616 url(/assets/full/bkg-body.jpg) 0 0 repeat;
   }
@@ -446,164 +596,123 @@ footer {
     background : transparent url(/assets/full/bkg-header.png) 50% 0 no-repeat;
     min-height : 100%;
   }
-  #container {
-    overflow : auto;
-    padding-bottom : 44px;
-  }
-  /* =============================================================================
-     Header
-     ========================================================================== */
-  header {
-    padding-top : 70px;
-    position : relative;
-    width : 100%;
-  }
-    .page-presenter a {
-      background : transparent url(/assets/full/aor.png) 50% 0 no-repeat;
-      cursor: pointer;
-      display : inline-block;
-      height : 44px;
-      left : 50%;
-      margin-left : -195px;
-      position : absolute;
-      top : 0;
-      width : 390px;
-    }
-    .page-presenter a:hover,
-    .page-presenter a:focus {
-      background : transparent url(/assets/full/aor-hover.png) 50% 0 no-repeat;
-    }
-    .page-purpose {
-      height : 106px;
-      margin : 0 auto;
-      padding : 0;
-      width : 868px;
-    }
-  /* =============================================================================
-     Content
-     ========================================================================== */
-  div#main {
-
-  }
-    .introduction {
-      line-height : 30px;
-      text-align : center;
-    }
-    .introduction h2 {
-      font-size : 18px;
-      font-weight : normal;
-      letter-spacing : 1px;
-    }
-    .introduction b {
-      color : #ad0220;
-      font-weight : normal;
-    }
-
-    .sponsors,
-    .events {
-      text-align : center;
-    }
-    .sponsors .heading,
-    .events .heading {
-      color : #fff;
-      font-family : LobsterTwoItalic;
-      font-size : 30px;
-      font-weight : normal;
-      letter-spacing : 1px;
-      margin-top : 20px;
-      text-shadow : 0 1px 0 #af868d;
-    }
-    .sponsors ul {
-      display : block;
-      margin : 0;
-      padding : 10px 10px 0;
-    }
-    .sponsors li {
-      list-style : none;
-      display : inline-block;
-      margin : 0 10px;
-    }
-
-
-    .events {
-      list-style : none;
-      margin : 0;
-      padding : 0 0 20px;
-      width : 100%;
-    }
-    .eventlist {
-      display : block;
-      list-style : none;
-      margin : 0 auto;
-      overflow : hidden;
-      padding : 0;
-      width : 80%;
-    }
-    .event {
-      background : transparent url(/assets/full/bkg-tile.png) 50% 0 no-repeat;
-      display : inline-block;
-      height : 265px;
-      margin : 10px;
-      position : relative;
-      padding : 20px;
-      vertical-align: top;
-      width : 245px;
-    }
-    .event h1 {
-      color : #ad0220;
-      font-family : TradeGothic, sans-serif;
-      font-size : 30px;
-      padding: 0;
-      text-align : center;
-    }
-    .event p {
-      display : block;
-      font-size : 16px;
-      line-height : 22px;
-      margin : 26px 0 0;
-      text-align : justify; 
-    }
-    .event p b {
-      color : #af868d;
-    }
-    .event a.ir {
-      background : transparent url(/assets/full/btn-learn_more.png) 50% 0 no-repeat;
-      bottom : 16px;
-      display : block;
-      height : 46px;
-      margin-right : -86px;
-      position : absolute;
-      right : 50%;
-      width : 167px;
-    }
-    .event a.ir:hover {
-      background : transparent url(/assets/full/btn-learn_more-hover.png) 50% 0 no-repeat;
-    }
-
-  /* =============================================================================
-     Footer
-     ========================================================================== */
-  footer {
-    background : #1c1c1c url(/assets/bkg-footer.png) 0 0 repeat-x;
-    clear : both;
+  .desktop {
     display : block;
-    height : 24px;
-    margin : 0;
-    margin-top : -44px; /* negative value of footer height */
-    padding : 1px 10px 19px;
-    position : relative;
-    text-align : center;
+    visibility : visible;
   }
-    footer a {
-      color : #ad0220 !important;
-    }
-
-
+  .mobile {
+    display : none;
+    visibility : hidden;
+  }
+  .page-purpose {
+    max-height : 80px;
+    margin : 0 auto;
+    padding : 0;
+    text-align : center;
+    width : 60%;
+  }
 }
 
+@media only screen and (min-width : 700px) {
+  .sponsors .heading,
+  .events .heading {
+    font-size : 24px;
+  }
+  .sponsors li {
+    width : 29%;
+    margin : 0 2%;
+  }
+      .events {
+    list-style : none;
+    margin : 0;
+    padding : 0 0 20px;
+    width : 100%;
+  }
+  .eventlist {
+    display : block;
+    list-style : none;
+    margin : 0 auto;
+    overflow : hidden;
+    padding : 0;
+  }
+  .event {
+    background : transparent url(/assets/full/bkg-tile.png) 50% 0 no-repeat;
+    display : inline-block;
+    height : 265px;
+    margin : 10px;
+    position : relative;
+    padding : 20px;
+    vertical-align: top;
+    width : 245px;
+  }
+  .event h1 {
+    color : #ad0220;
+    font-family : TradeGothic, sans-serif;
+    font-size : 30px;
+    line-height : 38px;
+    padding : 0;
+    text-align : center;
+  }
+  .event p {
+    display : block;
+    font-size : 16px;
+    line-height : 22px;
+    margin : 26px 0 0;
+    text-align : justify; 
+  }
+  .event p b {
+    color : #af868d;
+  }
+  .event a.ir {
+    background : transparent url(/assets/full/btn-learn_more.png) 50% 0 no-repeat;
+    bottom : 16px;
+    display : block;
+    height : 46px;
+    margin-right : -86px;
+    position : absolute;
+    right : 50%;
+    width : 167px;
+  }
+  .event a.ir:hover {
+    background : transparent url(/assets/full/btn-learn_more-hover.png) 50% 0 no-repeat;
+  }
+}
 
-
-
+@media only screen and (min-width : 930px) {
+  body {
+    background : #161616 url(/assets/full/bkg-body.jpg) 0 0 repeat;
+  }
+  #page {
+    background : transparent url(/assets/full/bkg-header.png) 50% 0 no-repeat;
+    min-height : 100%;
+  }
+  #main {
+    margin : 0 auto;
+    max-width : 960px;
+  }
+  .desktop {
+    display : block;
+    visibility : visible;
+  }
+  .mobile {
+    display : none;
+    visibility : hidden;
+  }
+  .sponsors li {
+    width : 20%;
+    margin : 0 2.5%;
+  }
+  .details .action {
+    display : inline-block;
+    float : left;
+    line-height : 18px;
+    margin : 0 10px 20px 0;
+    padding : 2px;
+    text-align : center;
+    text-decoration : none;
+    width : 31.5%;
+  }
+}
 
 
 /* ==|== non-semantic helper classes ========================================
@@ -658,44 +767,43 @@ footer {
    ========================================================================== */
 @font-face {
     font-family: 'LobsterTwoRegular';
-    src: url('../fonts/LobsterTwo-Regular-webfont.eot');
-    src: url('../fonts/LobsterTwo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/LobsterTwo-Regular-webfont.woff') format('woff'),
-         url('../fonts/LobsterTwo-Regular-webfont.ttf') format('truetype'),
-         url('../fonts/LobsterTwo-Regular-webfont.svg#LobsterTwoRegular') format('svg');
+    src: url('/fonts/LobsterTwo-Regular-webfont.eot');
+    src: url('/fonts/LobsterTwo-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-Regular-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-Regular-webfont.svg#LobsterTwoRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
     font-family: 'LobsterTwoItalic';
-    src: url('../fonts/LobsterTwo-Italic-webfont.eot');
-    src: url('../fonts/LobsterTwo-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/LobsterTwo-Italic-webfont.woff') format('woff'),
-         url('../fonts/LobsterTwo-Italic-webfont.ttf') format('truetype'),
-         url('../fonts/LobsterTwo-Italic-webfont.svg#LobsterTwoItalic') format('svg');
+    src: url('/fonts/LobsterTwo-Italic-webfont.eot');
+    src: url('/fonts/LobsterTwo-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-Italic-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-Italic-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-Italic-webfont.svg#LobsterTwoItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
     font-family: 'LobsterTwoBold';
-    src: url('../fonts/LobsterTwo-Bold-webfont.eot');
-    src: url('../fonts/LobsterTwo-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/LobsterTwo-Bold-webfont.woff') format('woff'),
-         url('../fonts/LobsterTwo-Bold-webfont.ttf') format('truetype'),
-         url('../fonts/LobsterTwo-Bold-webfont.svg#LobsterTwoBold') format('svg');
+    src: url('/fonts/LobsterTwo-Bold-webfont.eot');
+    src: url('/fonts/LobsterTwo-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/LobsterTwo-Bold-webfont.woff') format('woff'),
+         url('/fonts/LobsterTwo-Bold-webfont.ttf') format('truetype'),
+         url('/fonts/LobsterTwo-Bold-webfont.svg#LobsterTwoBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
     font-family: 'TradeGothic';
-    src: url('../fonts/tradegothic-boldcondtwenty-webfont.eot');
-    src: url('../fonts/tradegothic-boldcondtwenty-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/tradegothic-boldcondtwenty-webfont.woff') format('woff'),
-         url('../fonts/tradegothic-boldcondtwenty-webfont.ttf') format('truetype'),
-         url('../fonts/tradegothic-boldcondtwenty-webfont.svg#LobsterTwoBold') format('svg');
+    src: url('/fonts/tradegothic-boldcondtwenty-webfont.eot');
+    src: url('/fonts/tradegothic-boldcondtwenty-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/tradegothic-boldcondtwenty-webfont.woff') format('woff'),
+         url('/fonts/tradegothic-boldcondtwenty-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 

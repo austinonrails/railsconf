@@ -28,14 +28,20 @@
 
 <body id="<%= controller.controller_name.parameterize %>_<%= controller.action_name.parameterize %>">
 <div id="page">
-  <div id="container">  
+  <div id="container">
+
+    <div class="page-presenter">
+      <a href="http://austinonrails.org/">Austin on Rails <b>presents</b></a>
+    </div>
 
     <header>
-      <div class="page-presenter"><a class="ir" href="http://austinonrails.org/">Austin on Rails presents</a></div>
-      <h1 class="page-purpose"><a href="/"><%= image_tag "full/masthead.png" %></a></h1>
+      <h1 class="page-purpose">
+        <a href="/"><b class="mobile"><%= image_tag "mobile/masthead.png" %></b><b class="desktop"><%= image_tag "full/masthead.png" %></b></a>
+      </h1>
     </header>
 
     <div id="main" role="main">
+      <hr class="mobile" />
         <%= yield %>
     </div> <!-- /#main -->
 
@@ -44,7 +50,22 @@
 </div> <!-- /#page -->
 
 <footer>
-  <p><a href="/bohconf">BohConf</a> | <a href="/ignite">Ignite RailsConf</a> | <a href="/5k">RailsConf 5K</a> | <a href="/happy">Welcome to Austin Happy Hour</a> | <a href="/talk">Talk With a Local</a> | <a href="/stay">Stay With a Local</a></p>
+  <p class="mobile">
+    <a href="/bohconf">Boh</a> | 
+    <a href="/ignite">Ignite</a> | 
+    <a href="/5k">5K</a> | 
+    <a href="/happy">Happy Hour</a> | 
+    <a href="/talk">Talk Local</a> | 
+    <a href="/stay">Stay Local</a>
+  </p>
+  <p class="desktop">
+    <a href="/bohconf">BohConf</a> | 
+    <a href="/ignite">Ignite RailsConf</a> | 
+    <a href="/5k">RailsConf 5K</a> | 
+    <a href="/happy">Welcome to Austin Happy Hour</a> | 
+    <a href="/talk">Talk With a Local</a> | 
+    <a href="/stay">Stay With a Local</a>
+  </p>
 </footer>
 
 <!-- Tracking -->
