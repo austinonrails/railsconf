@@ -401,7 +401,7 @@ div#main {
     position : relative;
     padding : 20px;
     vertical-align: top;
-    width : 284px;
+    width : 264px;
   }
   .event h1 {
     color : #ad0220;
@@ -421,7 +421,7 @@ div#main {
     display : inline-block;
     height : 46px;
     position : absolute;
-    right : 20px;
+    right : 14px;
     width : 46px;
   }
   .event a.ir:hover {
