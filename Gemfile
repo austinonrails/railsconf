@@ -22,6 +22,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'pgbackup-tasks'
+
+gem 'oauth', '~> 0.4.5'
+gem 'twitter', '~> 2.0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120322113010) do
+ActiveRecord::Schema.define(:version => 20120329211557) do
 
   create_table "bohconf_sessions", :force => true do |t|
     t.string   "title"
@@ -78,6 +78,18 @@ ActiveRecord::Schema.define(:version => 20120322113010) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.boolean  "hide",       :default => false, :null => false
+  end
+
+  create_table "twitter_accounts", :force => true do |t|
+    t.string   "oauth_token"
+    t.string   "oauth_token_secret"
+    t.string   "oauth_token_verifier"
+    t.text     "oauth_authorize_url"
+    t.text     "stream_url"
+    t.string   "screen_name"
+    t.boolean  "active",               :default => true, :null => false
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
 end
