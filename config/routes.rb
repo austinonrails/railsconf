@@ -40,6 +40,10 @@ Railsconf::Application.routes.draw do
     collection do
       get 'thanks'
     end
+    member do
+      get 'write_tweet'
+      post 'send_tweet'
+    end
   end
 
   resources :twitter_accounts, :only => [:new, :edit, :update] do

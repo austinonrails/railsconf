@@ -1,0 +1,6 @@
+<h1>Tweet about BohConf Session</h1>
+
+<%= form_tag(send_tweet_bohconf_session_path(@bohconf_session)) do %>
+	<%= text_area_tag :tweet_body, "##{@bohconf_session.session_type} @#{@bohconf_session.host_twitter} \"#{@bohconf_session.title}\"", :cols => 50, :rows => 5 %>
+	<%= submit_tag 'tweeeet' %>
+<% end %>

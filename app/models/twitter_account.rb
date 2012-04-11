@@ -31,13 +31,6 @@ class TwitterAccount < ActiveRecord::Base
     self.save!
   end
 
-  def tweet_about_session(session)
-    if session.tweeted_at.blank?
-    	
-    	self.post(message.body)
-    end
-  end
-
   def post(message)
     Twitter.configure do |config|
       config.consumer_key = ENV["TWITTER_CONSUMER_KEY"]
