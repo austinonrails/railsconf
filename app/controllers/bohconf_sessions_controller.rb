@@ -1,5 +1,5 @@
 class BohconfSessionsController < ApplicationController
-  before_filter :authenticate, :only => [:index, :destroy, :show]
+  before_filter :authenticate, :only => [:index, :destroy, :show, :write_tweet, :send_tweet]
   before_filter :authorized_to_edit_bohconf_session, :only => [:edit, :update]
   # GET /bohconf_sessions
   # GET /bohconf_sessions.json
@@ -81,6 +81,20 @@ class BohconfSessionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to bohconf_sessions_url }
       format.json { head :no_content }
+    end
+  end
+
+  def write_tweet
+    @bohconf_session = BohconfSession.find(params[:id])
+  end
+
+  def send_tweet
+    @bohconf_session = BohconfSession.find(params[:id])
+    @tweet = bohconf_twitter_account.post(params[:tweet_body])
+    if @tweet
+      redirect_to @bohconf_session, notice: 'Tweeted!'
+    else
+      render :write_tweet
     end
   end
 

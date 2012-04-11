@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def bohconf_twitter_account
+  	TwitterAccount.find(1)
+  end
+  helper_method :bohconf_twitter_account
+
 	protected
 	def authenticate
 	  authenticate_or_request_with_http_basic do |username, password|
