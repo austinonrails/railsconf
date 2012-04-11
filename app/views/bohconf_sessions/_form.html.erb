@@ -17,7 +17,7 @@
         <%= f.label :session_type %>
         <div class="controls">
           <label class="radio">
-            <%= f.radio_button :session_type, 'hack session' %>
+            <%= f.radio_button :session_type, 'hack' %>
             This is a hack session
           </label><br />
           <label class="radio">
@@ -25,7 +25,7 @@
             This is a talk
           </label><br />
           <label class="radio">
-            <%= f.radio_button :session_type, 'birds of a feather' %>
+            <%= f.radio_button :session_type, 'bof' %>
             This is a birds of a feather
           </label>
         </div>
@@ -34,18 +34,6 @@
         <%= f.label :title %>
         <div class="controls">
           <%= f.text_field :title %>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :abstract %>
-        <div class="controls">
-          <%= f.text_area :abstract %>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :host_name %>
-        <div class="controls">
-          <%= f.text_field :host_name %>
         </div>
       </div>
       <div class="control-group">
@@ -61,12 +49,6 @@
             <span class="add-on">@</span>
             <%= f.text_field :host_twitter, :class => 'span2' %>
           </div>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :host_bio %>
-        <div class="controls">
-          <%= f.text_area :host_bio, :rows => 5 %>
         </div>
       </div>
       <div class="control-group">
