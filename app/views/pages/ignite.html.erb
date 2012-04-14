@@ -14,9 +14,7 @@
 
         <p><%= link_to 'FOLLOW @igniterailsconf for the latest news', 'http://twitter.com/igniterailsconf', :class => 'action' %></p>
 
-        <p>&nbsp;</p>        
     </section>
-    <h2>Proposal submission is now closed.</h2>
 
     <% @ignite_speakers = Speaker.where(:hide => false) %>
     <% if @ignite_speakers.any? %>
