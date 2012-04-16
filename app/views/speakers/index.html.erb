@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Email</th>
     <th>Title</th>
     <th>Abstract</th>
     <th>Bio</th>
@@ -14,6 +15,7 @@
 <% @speakers.each do |speaker| %>
   <tr>
     <td><%= speaker.name %></td>
+    <td><%= speaker.email%></td>
     <td><%= speaker.title %></td>
     <td><%= speaker.abstract %></td>
     <td><%= speaker.bio %></td>
