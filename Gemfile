@@ -6,6 +6,7 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'newrelic_rpm'
+
 gem 'rails_autolink'
 
 # Gems used only for assets and not required
@@ -40,7 +41,7 @@ gem 'twitter', '~> 2.0.0'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-# group :production do
-#   gem 'pg'
-#   gem 'pgbackup-tasks'
-# end
+group :production do
+  gem 'pg'
+  gem 'pgbackup-tasks'
+end
