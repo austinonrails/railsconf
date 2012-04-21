@@ -5,9 +5,8 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
 gem 'newrelic_rpm'
-
+gem 'rails_autolink'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +21,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'pgbackup-tasks'
 
 gem 'oauth', '~> 0.4.5'
 gem 'twitter', '~> 2.0.0'
@@ -41,3 +39,8 @@ gem 'twitter', '~> 2.0.0'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+# group :production do
+#   gem 'pg'
+#   gem 'pgbackup-tasks'
+# end

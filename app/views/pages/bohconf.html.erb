@@ -34,7 +34,7 @@
 					<h2><%= link_to_if session.host_twitter.present?, session.host_name, "http://twitter.com/#{session.host_twitter}" %></h2>
 					<h2><%= session.title %></h2>
 					<p class="session-description">
-						<%= session.abstract %>
+						<%= auto_link session.abstract %>
 					</p>
 				</li>
 			<% end %>
