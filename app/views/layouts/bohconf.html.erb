@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- Conditional comment for mobile ie7 blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>    <html class="no-js iem7" lang="en"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>BohConf 2012</title>
+  <meta name="description" content="">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- LINKED files -->
+  <%= stylesheet_link_tag    "boh", :media => "all" %>
+  <link rel="author" href="/humans.txt" />
+
+  <!-- SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+</head>
+
+<body class="bohverviewer">
+
+  <div id="container">
+
+    <% if notice %>
+    <p id="notice"><%= notice %></p>
+    <% end %>
+
+    <header>
+      <nav role="navigation">
+        <ul>
+          <li class="nav-item now <%= 'current' if controller.action_name == 'bohconf_now' %>">
+            <%= link_to 'Now', bohconf_sessions_path %>
+          </li>
+          <li class="nav-item soon <%= 'current' if controller.action_name == 'bohconf_soon' %>">
+            <%= link_to 'Soon', bohconf_sessions_soon_path %>
+          </li>
+          <li class="nav-item talks_hacks <%= 'current' if controller.action_name == 'new' %>">
+            <%= link_to '+ Add Session', new_bohconf_session_path %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="main" role="main">
+      <%= yield %>
+    </div> <!-- /#main -->
+
+
+    <div style="padding-top:50px;margin-top:50px;border-top:1px solid #ccc;text-align:center;">
+      Your Friendly <%= link_to 'RailsConf', 'http://railsconf.com', :target => '_blank' %> Uncof<br />
+      April 23rd - 25th 2012<br />
+      <%= link_to 'Hilton Austin, 4th Floor', 'http://g.co/maps/q3ckm', :target => '_blank' %><br /><br />
+      <%= image_tag "cowboh-150-gray.png" %><br />
+      
+    </div>
+
+  </div> <!-- /#container -->
+
+
+<!-- Tracking -->
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f5ebe3a613f5d02a7000023');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>

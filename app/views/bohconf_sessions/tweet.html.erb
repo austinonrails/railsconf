@@ -1,0 +1,18 @@
+<h1>Tweet about BohConf Session</h1>
+
+<%= form_tag(send_tweet_bohconf_session_path(@bohconf_session)) do %>
+	<%= text_area_tag :tweet_body, "##{@bohconf_session.session_type} #{'@'+@bohconf_session.host_twitter unless @bohconf_session.host_twitter.blank?} \"#{@bohconf_session.title}\" #{@bohconf_session.starts_at.strftime("%a %l:%M%p")} #{boh_short_url(@bohconf_session)}", :cols => 50, :rows => 5 %>
+	<%= submit_tag 'tweeeet' %> <span id="characters-left"></span>
+<% end %>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		left = 140 - $('#tweet_body').val().length;
+		$('#characters-left').text(left);
+		
+		$('#tweet_body').keyup(function() {
+			left = 140 - $('#tweet_body').val().length;
+			$('#characters-left').text(left);
+		})
+	})
+</script>

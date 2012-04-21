@@ -1,0 +1,19 @@
+<section id="latest-talk" class="content">
+  <h1><%= session.starts_at.strftime("%a %l:%M%p") %> - <%= session.ends_at.strftime("%l:%M%p") %></h1>
+  <article class="talk">
+    <div class="host clearfix">
+      <a class="host-thumb" href="<%= 'http://twitter.com/' + session.host_twitter if session.host_twitter.present? %>" target="_blank">
+        <%= image_tag("http://api.twitter.com/1/users/profile_image/#{session.host_twitter}?size=normal", :size => "48x48") %>
+      </a>
+      <b class="talk"><%= session.session_type.upcase %></b>
+      <h2><%= link_to session.title, boh_short_path(session) %></h2>
+      <h3><em>by</em> <%= session.host_name %></h3>
+      <% if @admin %>
+        <%= link_to 'edit', edit_bohconf_session_path(session) %>
+      <% end %>
+    </div>
+    <p class="description">
+      <%= session.abstract %>
+    </p>
+  </article>
+</section> <!-- /#latest-talk -->

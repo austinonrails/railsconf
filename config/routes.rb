@@ -1,7 +1,10 @@
 Railsconf::Application.routes.draw do
 
   root :to => "pages#index"
-  get "/bohconf", :to => "pages#bohconf"
+  get "/bohconf", :to => "bohconf_sessions#index"
+  get "/bohconf_soon", :to => "bohconf_sessions#soon", :as => 'bohconf_sessions_soon'
+  get "/boh/:id", :to => "bohconf_sessions#show", :as => "boh_short"
+  get "/boh/:id/tweet", :to => "bohconf_sessions#tweet"
   get "/ignite", :to => "pages#ignite"
   get "/talk", :to => "pages#talk"
   get "/stay", :to => "pages#stay"
@@ -41,7 +44,7 @@ Railsconf::Application.routes.draw do
       get 'thanks'
     end
     member do
-      get 'write_tweet'
+      get 'tweet'
       post 'send_tweet'
     end
   end

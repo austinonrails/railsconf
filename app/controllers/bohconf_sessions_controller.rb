@@ -1,59 +1,61 @@
 class BohconfSessionsController < ApplicationController
-  before_filter :authenticate, :only => [:index, :destroy, :show, :write_tweet, :send_tweet]
+  layout 'bohconf'
+  before_filter :authenticate, :only => [:destroy, :write_tweet, :send_tweet]
   before_filter :authorized_to_edit_bohconf_session, :only => [:edit, :update]
-  # GET /bohconf_sessions
-  # GET /bohconf_sessions.json
-  def index
-    @bohconf_sessions = BohconfSession.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @bohconf_sessions }
-    end
+  def index
+    # show me sessions that have started in the last hour
+    # or will start in the next 20 minutes
+    # that havent ended yet
+    @sessions = BohconfSession.approved.
+      where('starts_at >= ?', 1.hour.ago).
+      where('starts_at <= ?', 20.minutes.from_now).
+      where('ends_at >= ?', Time.now).
+      order('starts_at')
+
+    
+    redirect_to bohconf_sessions_soon_path if @sessions.empty?
   end
 
-  # GET /bohconf_sessions/1
-  # GET /bohconf_sessions/1.json
+  def soon
+    @sessions = BohconfSession.approved.
+      where('starts_at >= ?', Time.now).
+      where('ends_at >= ?', Time.now).
+      order('starts_at')
+
+    @sessions = @sessions.where('session_type = ?', params[:session_type]) if params[:session_type].present?
+  end
+
   def show
     @bohconf_session = BohconfSession.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bohconf_session }
-    end
+    render :layout => 'bohconf'
   end
 
-  # GET /bohconf_sessions/new
-  # GET /bohconf_sessions/new.json
   def new
     @bohconf_session = BohconfSession.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @bohconf_session }
-    end
   end
 
-  # GET /bohconf_sessions/1/edit
   def edit
   end
 
-  # POST /bohconf_sessions
-  # POST /bohconf_sessions.json
   def create
     @bohconf_session = BohconfSession.new(params[:bohconf_session])
-    @bohconf_session.hide = true
+    @bohconf_session.starts_at = params[:bohconf_session][:starts_at].to_time
+    @bohconf_session.ends_at = params[:bohconf_session][:ends_at].to_time
+
     @bohconf_session.token = SecureRandom.hex(10)
-    respond_to do |format|
-      if @bohconf_session.save
-        AdminMailer.submission(@bohconf_session).deliver
-        UserMailer.bohconf_session_submitted(@bohconf_session).deliver
-        format.html { redirect_to thanks_bohconf_sessions_url }
-        format.json { render json: @bohconf_session, status: :created, location: @bohconf_session }
+
+    if @bohconf_session.save
+      AdminMailer.submission(@bohconf_session).deliver
+      UserMailer.bohconf_session_submitted(@bohconf_session).deliver
+      if @admin
+        redirect_to thanks_bohconf_sessions_url
       else
-        format.html { render action: "new" }
-        format.json { render json: @bohconf_session.errors, status: :unprocessable_entity }
+        redirect_to tweet_bohconf_session_url(@bohconf_session)
       end
+    else
+      render :new
     end
   end
 
@@ -61,30 +63,17 @@ class BohconfSessionsController < ApplicationController
   # PUT /bohconf_sessions/1.json
   def update
     @bohconf_session = BohconfSession.find(params[:id])
-    respond_to do |format|
-      if @bohconf_session.update_attributes(session_params)
-        format.html { redirect_to bohconf_path, notice: 'Bohconf session was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @bohconf_session.errors, status: :unprocessable_entity }
-      end
+    if @bohconf_session.update_attributes(session_params)
+      redirect_to bohconf_path, notice: 'Session was successfully updated.'
     end
   end
 
-  # DELETE /bohconf_sessions/1
-  # DELETE /bohconf_sessions/1.json
   def destroy
     @bohconf_session = BohconfSession.find(params[:id])
     @bohconf_session.destroy
-
-    respond_to do |format|
-      format.html { redirect_to bohconf_sessions_url }
-      format.json { head :no_content }
-    end
   end
 
-  def write_tweet
+  def tweet
     @bohconf_session = BohconfSession.find(params[:id])
   end
 

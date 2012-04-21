@@ -1,0 +1,260 @@
+/* HTML5 ✰ Boilerplate
+ * ==|== reset ==============================================================
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin : 0; padding : 0; border : 0; font-size : 100%; font : inherit; vertical-align : baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display : block; }
+body { line-height : 1; }
+ol, ul { list-style : none; }
+blockquote, q { quotes : none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content : ''; content : none; }
+table { border-collapse : collapse; border-spacing : 0; }
+
+/* ==|== primary styles =====================================================
+   Author:
+   ========================================================================== */
+body.bohverviewer {
+  background-color : #e5e5e5;
+  color : #666;
+  font : normal 14px/20px "Helvetica Neue", HelveticaNeue, Helvetica-Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.bohverviewer a {           color : #929292; }
+.bohverviewer a:hover {     color : #464646; }
+.bohverviewer .current a {  color : #865a61; }
+.bohverviewer em { font-style : italic;}
+
+.bohverviewer #container {
+  /*border : 0px solid #d6d6d6;
+  border-width : 0 1px;*/
+  margin : 0 auto;
+  width : 320px;
+}
+.bohverviewer nav ul {
+  background : #ddd;
+  border-bottom : 1px solid #ebebeb;
+  color : #929292;
+  font-family : BebasNeue, sans-serif !important;
+  font-size : 24px;
+  list-style : none;
+  overflow : auto;
+  padding : 0 10px;
+}
+.bohverviewer nav li {
+  display : block;
+}
+.bohverviewer nav li a {
+  border-bottom : 1px solid #d6d6d6;
+  color : #929292;
+  float : left;
+  padding : 10px 10px 8px;
+  text-decoration : none;
+}
+.bohverviewer nav li a:hover {
+  color : #464646;
+}
+.bohverviewer nav .current a {
+  color : #865a61;
+}
+.bohverviewer nav li:first-of-type a {
+  padding-left : 0;
+}
+.bohverviewer nav li:last-of-type a {
+  padding-right : 0;
+}
+.bohverviewer nav .talks_hacks a {
+}
+.bohverviewer nav .search a {
+  border-left : 1px solid #d6d6d6;
+  padding-left : 7px
+}
+.bohverviewer nav .icon-search {
+  background : transparent url(../img/icon-search.png) 0 0 no-repeat;
+  display : inline-block;
+  height : 18px;
+  margin-right : 7px;
+  width : 14px;
+}
+
+/* Main Content */
+.bohverviewer #main {
+  padding : 0 10px 10px;
+}
+
+/* Sections */
+.bohverviewer .content {
+  padding : 15px 0 15px;
+}
+.bohverviewer .content:last-of-type,
+.bohverviewer .hack:last-of-type {
+  margin-bottom : 0;
+  padding-bottom : 0;
+}
+.bohverviewer .content h1 {
+  border-bottom : 1px solid #d6d6d6;
+  color : #939393;
+  font-family : BebasNeue, sans-serif !important;
+  font-size : 18px;
+  margin-bottom : 10px;
+}
+
+/* Latest Tweet */
+.bohverviewer .content .user {
+  display : inline-block;
+  vertical-align : top;
+  width : 64px;
+}
+.bohverviewer .content .avatar {
+  max-width : 100%;
+}
+.bohverviewer .content .status {
+  background : transparent url(../img/bkg-status.png) 0 0 no-repeat;
+  color : #e4e4e4;
+  display : inline-block;
+  font-size : 11px;
+  height : 65px;
+  line-height : 14px;
+  margin : 0 0 0 -1px;
+  padding : 0;
+  position : relative;
+  vertical-align : top;
+  width : 233px;
+}
+.bohverviewer .content .status p {
+  padding : 3px 6px 0 16px;
+}
+.bohverviewer .content .status-time {
+  bottom : 5px;
+  color : #bbb;
+  font-size : 9px;
+  position : absolute;
+  right : 8px;
+  text-decoration : none;
+}
+
+/* Latest Talk + Latest Hack */
+.bohverviewer article.hack {
+  margin-bottom : 20px;
+}
+.bohverviewer .host {
+  display : block;
+}
+.bohverviewer .host-thumb {
+  display : inline-block;
+  float : left;
+  margin-right : 6px;
+  vertical-align : top;
+  width : 48px;
+}
+.bohverviewer .host-thumb img {
+  max-width : 100%;
+}
+.bohverviewer .host h2 a {
+  color : #464646;
+  display : inline-block;
+  font-family: "HelveticaNeueCondensedBlack", "HelveticaNeue-Condensed-Black", "Helvetica Neue Condensed Black", "HelveticaNeueBlackCondensed", "HelveticaNeue-Black-Condensed", "Helvetica Neue Black Condensed", "HelveticaNeueBlack", "HelveticaNeue-Black", "Helvetica Neue Black", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+  font-size : 14px;
+  font-stretch : condensed;
+  font-weight : 600;
+  min-width : 200px;
+  vertical-align : top;
+}
+.bohverviewer .host h3 {
+  display : inline-block;
+  font-size : 12px;
+  min-width : 230px;
+  vertical-align : top;
+}
+.bohverviewer .host b {
+  color : #fff;
+  display : inline-block;
+  float : right;
+  font-size : 9px;
+  font-weight : 600;
+  padding : 0 6px;
+  vertical-align : top;
+}
+.bohverviewer .host b.talk {
+  background-color : #aa032a;
+}
+.bohverviewer .host b.hack {
+  background-color : #ff670f;
+}
+
+/* Session Request Form Styles */
+.bohverviewer .control-group {
+  margin-bottom : 10px;
+}
+.bohverviewer .control-group label {
+  color : #7f0c1e;
+  display : inline-block;
+  float : left;
+  font-family : BebasNeue, sans-serif !important;
+  font-size : 18px;
+  line-height : 24px;
+  margin-top : 5px;
+  margin-right : 10px;
+  text-align : right;
+  width : 80px;
+}
+.bohverviewer .control-group input, .bohverviewer .control-group textarea {
+  float : left;
+  padding : 5px;
+  width : 190px;
+}
+.bohverviewer .control-group select {
+  float : left;
+  margin-top : 6px;
+  width : 200px;
+}
+.bohverviewer .form-notes {
+  font-size : 10px;
+  font-weight : bold;
+  line-height : 12px;
+  padding-left : 90px;
+}
+.bohverviewer .form-actions {
+  margin-top : 30px;
+  text-align : center;
+}
+.bohverviewer .form-actions button {
+  background-color : #7f0c1e;
+  border : 0;
+  border-radius : 3px;
+  color : #fff;
+  display : block;
+  font-family : BebasNeue, sans-serif !important;
+  font-size : 30px;
+  padding : 4px 0 2px;
+  width : 100%;
+}
+
+/* ==|== non-semantic helper classes ======================================== */
+
+.nocallout {-webkit-touch-callout: none;}
+textarea[contenteditable] {-webkit-appearance: none;}
+.gifhidden {position: absolute; left: -100%;}
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+
+
+/* ==|== @font-face web-fonts ======================================================= */
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('/fonts/BebasNeue-webfont.eot');
+    src: url('/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/BebasNeue-webfont.woff') format('woff'),
+         url('/fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('/fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
