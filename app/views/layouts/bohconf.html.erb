@@ -34,10 +34,10 @@
     <header>
       <nav role="navigation">
         <ul>
-          <li class="nav-item now <%= 'current' if controller.action_name == 'bohconf_now' %>">
+          <li class="nav-item now <%= 'current' if controller.action_name == 'index' %>">
             <%= link_to 'Now', bohconf_sessions_path %>
           </li>
-          <li class="nav-item soon <%= 'current' if controller.action_name == 'bohconf_soon' %>">
+          <li class="nav-item soon <%= 'current' if controller.action_name == 'soon' %>">
             <%= link_to 'Upcoming', bohconf_sessions_soon_path %>
           </li>
           <li class="nav-item talks_hacks <%= 'current' if controller.action_name == 'new' %>">
