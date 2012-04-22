@@ -37,6 +37,7 @@ class BohconfSessionsController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
@@ -63,6 +64,8 @@ class BohconfSessionsController < ApplicationController
   # PUT /bohconf_sessions/1.json
   def update
     @bohconf_session = BohconfSession.find(params[:id])
+    params[:bohconf_session][:starts_at] = params[:bohconf_session][:starts_at].to_time
+    params[:bohconf_session][:ends_at] = params[:bohconf_session][:ends_at].to_time
     if @bohconf_session.update_attributes(session_params)
       redirect_to bohconf_path, notice: 'Session was successfully updated.'
     end

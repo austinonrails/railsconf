@@ -1,4 +1,5 @@
-<%= form_for(@bohconf_session) do |f| %>
+ <%= form_for(@bohconf_session) do |f| %>
+
   <% if @bohconf_session.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bohconf_session.errors.count, "error") %> prohibited this bohconf_session from being saved:</h2>
@@ -11,88 +12,42 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="span6">
-      <div class="control-group">
-        <%= f.label :session_type %>
-        <div class="controls">
-          <label class="radio">
-            <%= f.radio_button :session_type, 'hack' %>
-            This is a hack session
-          </label><br />
-          <label class="radio">
-            <%= f.radio_button :session_type, 'talk' %>
-            This is a talk
-          </label><br />
-          <label class="radio">
-            <%= f.radio_button :session_type, 'bof' %>
-            This is a birds of a feather
-          </label>
-        </div>
+    <fieldset>
+      <div class="control-group clearfix">
+        <label for="">Host Name</label>
+        <%= f.text_field :host_name, :placeholder => "first and last name" %>
       </div>
-      <div class="control-group">
-        <%= f.label :title %>
-        <div class="controls">
-          <%= f.text_field :title %>
-        </div>
+      <div class="control-group clearfix">
+        <label for="">Email</label>
+        <%= f.text_field :host_email, :placeholder => "example@example.com" %>
       </div>
-      <div class="control-group">
-        <%= f.label :abstract %>
-        <div class="controls">
-          <%= f.text_area :abstract %>
-        </div>
+      <div class="control-group clearfix">
+        <label for="">Twitter</label>
+        <%= f.text_field :host_twitter, :placeholder => "username (no @)" %>
       </div>
-      <div class="control-group">
-        <%= f.label :host_name %>
-        <div class="controls">
-          <%= f.text_field :host_name %>
-        </div>
+      <div class="control-group clearfix">
+        <label for="">Topic</label>
+        <%= f.text_field :title, :placeholder => "My Awesome Session!" %>
       </div>
-      <div class="control-group">
-        <%= f.label :host_email %>
-        <div class="controls">
-          <%= f.text_field :host_email %>
-        </div>
+      <div class="control-group clearfix">
+        <label for="">Description</label>
+        <%= f.text_area :abstract, :rows => 4, :placeholder => '(optional)' %>
       </div>
-      <div class="control-group">
-        <%= f.label :host_twitter %>
-        <div class="controls">
-          <div class="input-prepend">
-            <span class="add-on">@</span>
-            <%= f.text_field :host_twitter, :class => 'span2' %>
-          </div>
-        </div>
+      <div class="control-group clearfix">
+        <label for="">Type</label>
+        <%= f.select :session_type, options_for_select(['hack', 'talk', 'bof']) %>
       </div>
-      <div class="control-group">
-        <%= f.label :suggested_time, 'Are there certain days or times that would be better?' %>
-        <div class="controls">
-          <%= f.text_area :suggested_time, :rows => 5 %>
-        </div>
+      <div class="control-group clearfix">
+        <label for="">Starts</label>
+        <%= f.select :starts_at, session_time(@bohconf_session.starts_at) %>
       </div>
-      <% if !@bohconf_session.new_record? && @admin %>
-        <div class="control-group">
-          <%= f.label :hide %>
-          <div class="controls">
-            <%= f.check_box :hide %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :starts_at %>
-          <div class="controls">
-            <%= f.datetime_select :starts_at %>
-          </div>
-        </div>
-        <div class="control-group">
-          <%= f.label :ends_at %>
-          <div class="controls">
-            <%= f.datetime_select :ends_at %>
-          </div>
-        </div>
-      <% end %>
+       <p class="form-notes">We only have space for 1 talk at a time. If you're submitting a talk <%= link_to "make sure you're not overlapping", bohconf_sessions_soon_path(:session_type => 'talk') %>.</p><br />
+      <div class="control-group clearfix">
+        <label for="">Ends</label>
+        <%= f.select :ends_at, session_time(@bohconf_session.ends_at) %>
+      </div>
       <div class="form-actions">
-        <%= hidden_field_tag :token, params[:token] %>
-        <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+        <button class="" type="submit">Blammo</button>
       </div>
-    </div>
-  </div>
-<% end %>
+    </fieldset>
+  <% end %>

@@ -5,6 +5,7 @@ Railsconf::Application.routes.draw do
   get "/bohconf_soon", :to => "bohconf_sessions#soon", :as => 'bohconf_sessions_soon'
   get "/boh/:id", :to => "bohconf_sessions#show", :as => "boh_short"
   get "/boh/:id/tweet", :to => "bohconf_sessions#tweet"
+  get "/boh/:id/edit", :to => "bohconf_sessions#edit"
   get "/ignite", :to => "pages#ignite"
   get "/talk", :to => "pages#talk"
   get "/stay", :to => "pages#stay"
