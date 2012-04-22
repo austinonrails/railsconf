@@ -83,7 +83,7 @@ body.bohverviewer {
 
 /* Sections */
 .bohverviewer .content {
-  padding : 15px 0 15px;
+  padding : 15px 0 0;
 }
 .bohverviewer .content:last-of-type,
 .bohverviewer .hack:last-of-type {
@@ -95,6 +95,9 @@ body.bohverviewer {
   color : #939393;
   font-family : BebasNeue, sans-serif !important;
   font-size : 18px;
+  margin-bottom : 10px;
+}
+.bohverviewer .content p {
   margin-bottom : 10px;
 }
 
@@ -149,6 +152,10 @@ body.bohverviewer {
 .bohverviewer .host-thumb img {
   max-width : 100%;
 }
+.bohverviewer .host h2 {
+  display : inline-block;
+  max-width : 200px;
+}
 .bohverviewer .host h2 a {
   color : #464646;
   display : inline-block;
@@ -156,13 +163,12 @@ body.bohverviewer {
   font-size : 14px;
   font-stretch : condensed;
   font-weight : 600;
-  min-width : 200px;
   vertical-align : top;
 }
 .bohverviewer .host h3 {
   display : inline-block;
   font-size : 12px;
-  min-width : 230px;
+  min-width : 150px;
   vertical-align : top;
 }
 .bohverviewer .host b {
@@ -172,14 +178,23 @@ body.bohverviewer {
   font-size : 9px;
   font-weight : 600;
   padding : 0 6px;
+  text-align : center;
   vertical-align : top;
+  width : 30px;
 }
 .bohverviewer .host b.talk {
   background-color : #aa032a;
+  text-shadow : 0 1px 2px rgba(0,0,0,0.4);
 }
 .bohverviewer .host b.hack {
   background-color : #ff670f;
+  text-shadow : 0 1px 2px rgba(0,0,0,0.3);
 }
+.bohverviewer .host b.bof {
+  background-color : #ace600;
+  text-shadow : 0 1px 2px rgba(0,0,0,0.2);
+}
+
 
 /* Session Request Form Styles */
 .bohverviewer .control-group {
@@ -228,6 +243,34 @@ body.bohverviewer {
   padding : 4px 0 2px;
   width : 100%;
 }
+
+/* Session Request Tweet It Styles */
+.bohverviewer .content #tweet_body {
+  margin : 0;
+  padding : 3px;
+  max-width : 292px !important;
+}
+.bohverviewer .tweeeet {
+  background-color : #7f0c1e;
+  border : 0;
+  border-radius : 3px;
+  color : #fff;
+  display : block;
+  font-family : BebasNeue, sans-serif !important;
+  font-size : 30px;
+  padding : 4px 0 2px;
+  width : 100%;
+}
+.bohverviewer .charCount {
+  font-family : BebasNeue, sans-serif !important;
+  font-size : 24px;
+  margin : 10px 0;
+  text-align : center;
+}
+.bohverviewer .characters-left {
+  font-size : 36px;
+}
+
 
 /* ==|== non-semantic helper classes ======================================== */
 
