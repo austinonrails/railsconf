@@ -39,6 +39,6 @@ module BohconfSessionsHelper
 			options << ["Wednesday #{i}:30pm", Time.zone.parse("2012-04-25 #{'%02d' % (i+12)}:30pm")]
 		end
 
-		options_for_select(options, time.strftime("%F %H:%M:00 -0500"))
+		options_for_select(options, (time.strftime("%F %H:%M:00 -0500") rescue Time.now.strftime("%F %H:%M:00 -0500")))
 	end
 end
