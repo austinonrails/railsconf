@@ -35,7 +35,7 @@
       </div>
       <div class="control-group clearfix">
         <label for="">Type</label>
-        <%= f.select :session_type, options_for_select(['hack', 'talk', 'bof']) %>
+        <%= f.select :session_type, options_for_select(['hack', 'talk', 'bof'], @bohconf_session.session_type) %>
       </div>
       <div class="control-group clearfix">
         <label for="">Starts</label>
