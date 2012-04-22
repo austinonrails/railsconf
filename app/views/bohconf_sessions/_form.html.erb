@@ -47,6 +47,7 @@
         <%= f.select :ends_at, session_time(@bohconf_session.ends_at) %>
       </div>
       <div class="form-actions">
+        <%= hidden_field_tag :token, params[:token] %>
         <button class="" type="submit">Blammo</button>
       </div>
     </fieldset>
