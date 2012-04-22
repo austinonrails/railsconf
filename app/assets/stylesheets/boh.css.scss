@@ -81,6 +81,21 @@ body.bohverviewer {
   padding : 0 10px 10px;
 }
 
+
+/* Boh Notifications */
+#bohNotifications {
+  border-bottom : 1px solid #d6d6d6;
+  font-size : 16px;
+  padding-top : 10px;
+}
+#bohNotifications p {
+  margin-bottom : 10px;
+}
+#bohNotifications strong {
+  color : #865a61;
+  font-weight : bold;
+}
+
 /* Sections */
 .bohverviewer .content {
   padding : 15px 0 0;
