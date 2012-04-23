@@ -51,9 +51,9 @@ class BohconfSessionsController < ApplicationController
       AdminMailer.submission(@bohconf_session).deliver
       UserMailer.bohconf_session_submitted(@bohconf_session).deliver
       if @admin
-        redirect_to thanks_bohconf_sessions_url
-      else
         redirect_to tweet_bohconf_session_url(@bohconf_session)
+      else
+        redirect_to thanks_bohconf_sessions_url
       end
     else
       render :new
