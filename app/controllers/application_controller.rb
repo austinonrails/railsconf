@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def bohconf_twitter_account
-  	TwitterAccount.find(2)
+  	TwitterAccount.find(4)
   end
   helper_method :bohconf_twitter_account
 

@@ -2,5 +2,5 @@
     <h1>Stay with a Local</h1>
     <h2><%= pluralize(Host.all.length, 'local') %> have agreed to host <%= pluralize(Host.all.collect(&:number_of_guests).sum, 'attendee') %> in their homes.</h2>
     <p><%# link_to 'Apply to Stay with a Local', new_guest_path, :class => 'action' %>All our host spaces have been filled, we'll see you at the conference!</p>
-    <p><%= link_to 'Host some visitors if you\'re a local', new_host_path, :class => 'action' %></p>
+    <p class="clearfix"><%= link_to 'Host some visitors if you\'re a local', new_host_path, :class => 'action' %></p>
 </div>
