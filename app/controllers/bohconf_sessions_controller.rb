@@ -7,11 +7,7 @@ class BohconfSessionsController < ApplicationController
     # show me sessions that have started in the last hour
     # or will start in the next 20 minutes
     # that havent ended yet
-    @sessions = BohconfSession.approved.
-      where('starts_at >= ?', 1.hour.ago).
-      where('starts_at <= ?', 20.minutes.from_now).
-      where('ends_at >= ?', Time.now).
-      order('starts_at')
+    @sessions = BohconfSession.approved
 
     
     redirect_to bohconf_sessions_soon_path if @sessions.empty?
